@@ -1,43 +1,65 @@
-var data;
-var i;
-var flag = 0;
+var questions;
+var i=-1;
+var index = 0;
+var answers=[]
+function hide(){
+  $('#next').hide();
+  $('#submit').hide();
+  $('.options').hide();
+}
 
-function start(){
+function initialize(data){
+  questions=data;
+}
+
+function submit(){
+  save()
+
+}
+
+function save(){
   console.log("hello")
-    i = 0
-    data = $.ajax({
-        type: 'GET',
-        url: 'http://localhost:3000/api/question'
-    });
-
-    //$('.question').html(data['responseJSON'][i]['question']);
+  if(document.getElementById('option-one').checked){
+    answers[index]='option1'
+    index+=1
+  }
+  else if(document.getElementById('option-two').checked)
+  {
+    answers[index]='option2'
+    index+=1
+  }
+  else if(document.getElementById('option-three').checked)
+  {
+    answers[index]='option3'
+    index+=1
+  }
+  else if(document.getElementById('option-four').checked)
+  {
+    answers[index]='option4'
+    index+=1
+  }
+  i += 1;
+  if(questions.length-1 == i){
+    $('#next').hide();
+    $('#submit').show();
+  }
 }
 
 function show(){
-  $('.submit').html('Next');
-    $('.question').html(data['responseJSON'][i]['question']);
+  $('#next').show();
+  save()
+  console.log(questions)
+  document.getElementById("option-one").checked = false;
+  document.getElementById("option-two").checked = false;
+  document.getElementById("option-three").checked = false;
+  document.getElementById("option-four").checked = false;
+    $('.question').html(questions[i]['question']);
+    $('#start').hide();
+    $('#question').html(questions[i]['question']);
     $('.options').show()
-    $('.option').html(data['responseJSON'][i]['option1']);
-    $('.option1').html(data['responseJSON'][i]['option2']);
-    $('.option2').html(data['responseJSON'][i]['option3']);
-    $('.option3').html(data['responseJSON'][i]['option4']);
-    if(name_element = document.getElementById('option-1').checked){
-      console.log(data['responseJSON'][i]['option1'])
-    }
-    else if(name_element = document.getElementById('option-2').checked)
-    {
-      console.log(data['responseJSON'][i]['option2'])
-    }
-    else if(name_element = document.getElementById('option-3').checked)
-    {
-      console.log(data['responseJSON'][i]['option3'])
-    }
-    else if(name_element = document.getElementById('option-4').checked)
-    {
-      console.log(data['responseJSON'][i]['option4'])
-    }
-    i += 1;
-    if(data['responseJSON'].length == i){
-      $('.submit').html('Submit');
-    }
+    $('#option1').html(questions[i]['option1']);
+    $('#option2').html(questions[i]['option2']);
+    $('#option3').html(questions[i]['option3']);
+    $('#option4').html(questions[i]['option4']);
+
 }

@@ -3,8 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import * as $ from 'jquery';
 
-declare function start(): any;
+declare function submit(): any;
 declare function show(): any;
+declare function hide(): any;
+declare function initialize(data:any): any;
 
 
 @Component({
@@ -16,18 +18,25 @@ export class TestComponent implements OnInit {
   constructor(private _auth: AuthService) { }
 
   ngOnInit(): void {
-
+    hide()
   }
 
   startTest(){
-    console.log("Hello")
-    start()
-    window.location.href = "/assesment"
+    let question={}
+    this._auth.question()
+    .subscribe(
+      res => {
+        initialize(res)
+        show()
+      },
+      err => console.log(err)
+    )
   }
   showQuestion(){
-    console.log("Hello")
     show()
-    window.location.href = "/assesment"
+  }
+  submit(){
+    submit()
   }
 
 }
