@@ -18,6 +18,22 @@ mongoose.connect(db,err=>{
     }
 })
 
+function verifyToken(req, res, next){
+    if(!req.headers.authorization){
+        return res.status(401).send('unauthorized request')
+    }
+    let token = req.headers.authorization.split(' ')[1]
+    if (token === 'null'){
+        return res.status(401).send('unauthorized request')
+    }
+    let payload = jwt.verify(token,'secretKey')
+    if(!payload){
+        return res.status(401).send('unauthorized request')
+    }
+    req.userId = payload.subject
+    next()
+}
+
 router.post('/register',(req,res)=>{
     console.log(req.body)
     let userData = req.body
@@ -48,9 +64,7 @@ router.post('/login',(req,res)=>{
                 if (user.password !== userData.password){
                     res.status(401).send("Invalid Password")
                 }else{
-                    let payload = {subject: user._id}
-                    let token = jwt.sign(payload,"secretKey")
-                    res.status(200).send({token})
+                    res.status(200).send(user)
                 }
             }
         }
@@ -58,13 +72,11 @@ router.post('/login',(req,res)=>{
 })
 
 router.get('/question',(req,res)=>{
-    console.log("hello")
     Post.find({}, (err, posts)=>{
         if(err){
             console.log(err);
         }
         else {
-            console.log(posts)
             res.status(200).send(posts)
         }
     });
