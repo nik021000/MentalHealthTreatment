@@ -2,10 +2,12 @@ const express = require('express')
 const router = express.Router()
 const jwt = require("jsonwebtoken")
 const User = require('../models/user')
+const Answers = require('../models/answers')
 const mongoose = require('mongoose')
 router.use(express.json())
 router.use(express.urlencoded({ extended: true }))
 const Post = require('../models/question');
+const answers = require('../models/answers')
 
 //const db = "mongodb+srv://nikhil:nik%401234@cluster0.tgxkb.mongodb.net/test"
 const db = "mongodb://nikhil:nik%401234@cluster0-shard-00-00.tgxkb.mongodb.net:27017,cluster0-shard-00-01.tgxkb.mongodb.net:27017,cluster0-shard-00-02.tgxkb.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-e585d6-shard-0&authSource=admin&retryWrites=true&w=majority"
@@ -81,5 +83,18 @@ router.get('/question',(req,res)=>{
         }
     });
 })
+
+router.post('/answer',(req,res)=>{
+    let user = new User(res);
+    let email = req.body['email'];
+    User.findOneAndUpdate({email:email},{answers:req.body['answers']},{new:true},(error,updated)=>{
+        if(error){
+            console.log(error);
+        }else{
+            console.log('done');
+            res.status(200).send(updated)
+        }
+    })
+});
 
 module.exports = router

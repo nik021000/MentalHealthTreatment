@@ -14,11 +14,10 @@ function initialize(data){
 
 function submit(){
   save()
-
+  return answers
 }
 
 function save(){
-  console.log("hello")
   if(document.getElementById('option-one').checked){
     answers[index]='option1'
     index+=1
@@ -42,6 +41,7 @@ function save(){
   if(questions.length-1 == i){
     $('#next').hide();
     $('#submit').show();
+
   }
 }
 
@@ -61,5 +61,4 @@ function show(){
     $('#option2').html(questions[i]['option2']);
     $('#option3').html(questions[i]['option3']);
     $('#option4').html(questions[i]['option4']);
-
 }

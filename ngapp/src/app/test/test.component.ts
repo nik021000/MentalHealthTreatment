@@ -2,6 +2,8 @@ import { CompileShallowModuleMetadata } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import * as $ from 'jquery';
+import { data } from 'jquery';
+import { Router } from '@angular/router';
 
 declare function submit(): any;
 declare function show(): any;
@@ -15,7 +17,8 @@ declare function initialize(data:any): any;
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-  constructor(private _auth: AuthService) { }
+  constructor(private _auth: AuthService,
+    private _router: Router) { }
 
   ngOnInit(): void {
     hide()
@@ -36,7 +39,23 @@ export class TestComponent implements OnInit {
     show()
   }
   submit(){
-    submit()
+    let data={
+      email:'',
+      answers:[]
+    }
+
+    let answer=submit()
+    let str = ''+localStorage.getItem('userid')
+    data['email']=str;
+    data['answers'] = answer
+    this._auth.answer(data)
+    .subscribe(
+      res => {
+        console.log('heelo')
+        this._router.navigate(['/home'])
+      },
+      err => console.log(err)
+    )
   }
 
 }
