@@ -11,8 +11,10 @@
     <p class="sign" >Sign in</p>
     <form class="form1">
       <input [(ngModel)]="logInUserData.email" name="email" class="un " type="text" placeholder="Email" required>
-      <input [(ngModel)]="logInUserData.password" name="password" class="pass" type="password" placeholder="Password" required>
+      <input [(ngModel)]="logInUserData.password" name="password" class="un pass" type="password" placeholder="Password" required>
+      <div class="submitdiv">
       <button (click) = "authUser()" class="submit" >Sign in</button>
+    </div>
       <p class="forgot" ><a href="#">Forgot Password?</a></p>
       <p class="forgot" ><a href="/register/">Create Account</a></p>
     </form>

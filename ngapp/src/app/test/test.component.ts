@@ -41,7 +41,8 @@ export class TestComponent implements OnInit {
   submit(){
     let data={
       email:'',
-      answers:[]
+      answers:[],
+      test:true
     }
 
     let answer=submit()

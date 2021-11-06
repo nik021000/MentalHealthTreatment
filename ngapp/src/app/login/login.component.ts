@@ -24,7 +24,11 @@ export class LoginComponent implements OnInit {
       (res:any) => {
         localStorage.setItem('userid',res['email'])
         localStorage.setItem('token',res['_id'])
-        this._router.navigate(['/test'])
+        if (res['test']==true){
+          this._router.navigate(['/videoplayer'])
+        }else{
+          this._router.navigate(['/test'])
+        }
       },
       err => console.log(err)
     )

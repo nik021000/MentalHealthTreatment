@@ -87,7 +87,7 @@ router.get('/question',(req,res)=>{
 router.post('/answer',(req,res)=>{
     let user = new User(res);
     let email = req.body['email'];
-    User.findOneAndUpdate({email:email},{answers:req.body['answers']},{new:true},(error,updated)=>{
+    User.findOneAndUpdate({email:email},{answers:req.body['answers'],test:true},{new:true},(error,updated)=>{
         if(error){
             console.log(error);
         }else{

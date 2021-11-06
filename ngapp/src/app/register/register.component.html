@@ -12,10 +12,11 @@
     <form class="form1">
       <input [(ngModel)]="registerUserData.name" name="name" class="un " type="text" placeholder="Name" required>
       <input [(ngModel)]="registerUserData.email" [(ngModel)]="registerUserData._id" name="email" class="un " type="text" placeholder="Email" required>
-      <input [(ngModel)]="registerUserData.password" name="password" class="pass" type="password" placeholder="Password" required>
-      <input [(ngModel)]="registerUserData.password" name="password" class="pass" type="password" placeholder="Confirm Password" required>
+      <input [(ngModel)]="registerUserData.password" name="password" class="un pass" type="password" placeholder="Password" required>
+      <input [(ngModel)]="registerUserData.password" name="password" class="un pass" type="password" placeholder="Confirm Password" required>
+      <div class="submitdiv">
       <button (click) = "registerUser()" class="submit" >Sign in</button>
-      <p class="forgot" ><a href="#">Forgot Pass?</a></p>
+    </div>
       <p class="forgot" ><a href="/login/">Already have Account</a></p>
     </form>
     </div>

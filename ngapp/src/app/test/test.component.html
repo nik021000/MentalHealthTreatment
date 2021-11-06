@@ -11,25 +11,35 @@
     <p class="sign">Test</p>
     <p class="question">Would you like to begin a test?</p>
   <div class="options">
+  <div class="optionOne">
     <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
     <label id="option1"></label>
     <br>
+    </div>
+  <div class="optionOne">
     <input type="radio" id="option-two" name="option" class="radio" value="optionA" />
     <label id="option2">
     </label>
     <br>
-    <input type="radio" id="option-three" name="option" class="radio" value="optionA" />
+  </div>
+  <div class="optionOne">
+    <input type="radio" id="option-three" name="option" class="radio" value="optionA" >
     <label id="option3">
     </label>
     <br>
+  </div>
+  <div class="optionOne">
     <input type="radio" id="option-four" name="option" class="radio" value="optionA" />
     <label id="option4">
     </label>
     <br>
   </div>
+  </div>
+  <div class="submitdiv">
     <button (click) = "startTest()" class="submit" id="start">Start</button>
     <button (click) = "showQuestion()" class="submit" id="next">Next</button>
     <button (click) = "submit()" class="submit" id="submit">Submit</button>
+  </div>
     </div>
 </body>
 </html>

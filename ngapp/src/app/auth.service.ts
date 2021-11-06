@@ -24,7 +24,7 @@ export class AuthService {
     return this.http.get(this._questionUrl)
   }
 
-  answer(data: {email: string; answers: string[]; }){
+  answer(data: {email: string; answers: string[];test:boolean; }){
     return this.http.post(this._answerUrl,data)
   }
 
