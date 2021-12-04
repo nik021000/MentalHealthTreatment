@@ -1,4 +1,4 @@
-/*var video = document.getElementById("video");
+var video = document.getElementById("video");
 var videoPlayer = document.getElementById("videoPlayer");
 var timeStarted = -1;
 var timePlayed = 0;
@@ -54,4 +54,4 @@ video.addEventListener("playing", videoStartedPlaying);
 
 video.addEventListener("ended", videoStoppedPlaying);
 video.addEventListener("pause", videoStoppedPlaying);
-*/
+

@@ -34,7 +34,8 @@ const routes: Routes = [
   },
   {
     path:'videoplayer',
-    component:VideoplayerComponent
+    component:VideoplayerComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

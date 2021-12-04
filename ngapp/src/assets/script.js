@@ -62,3 +62,11 @@ function show(){
     $('#option3').html(questions[i]['option3']);
     $('#option4').html(questions[i]['option4']);
 }
+
+function verify(){
+  $('.error').html("Email Id and Password does not match")
+}
+
+function wrongemail(){
+  $('.error').html('Wrong Email Id')
+}

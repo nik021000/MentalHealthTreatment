@@ -1,29 +1,31 @@
-*{
-  margin: 0;
-  padding: 0;
-}
 body{
-  background: #2e8d86;
+  background-image: url('/assets/sky.jpg');
+  background-size: cover;
+  width: 100vw;
+
 }
 .container{
-  width: 80%;
-  margin: 80px auto;
+  /*width: 80%;*/
+  /*margin: 80px auto;*/
 }
+
 .container ,h1{
-  padding: 60px 0;
+  padding: 15px 0;
   color: #fff;
   font-size: 44px;
   text-align: center;
 }
+
 .row{
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 }
+
 .col{
-  flex-basis: 50%;
-  min-width: 250px;
+  flex-basis: 70%;
 }
+
 .feature-img{
   width: 83%;
   margin: auto;
@@ -31,21 +33,32 @@ body{
   border-radius: 6px;
   overflow: hidden;
 }
+
 .small-img-row{
     display: flex;
-    background: #efefef;
+    background: transparent;
     margin: 20px 0;
+    margin-left: 10%;
     align-items: center;
-    border-radius: 6px;
+    border: 4px solid white;
     overflow: hidden;
-    width: 85%;
+    width: 80vw;
+    height: 15vh;
 }
 .small-img{
     position: relative;
+    background-image: cover;
+    text-align: left;
 }
+.thumb{
+  background-image:cover;
+  height: 17vh;
+  width: 40%;
+}
+/*
 .small-img img{
     width: 150px;
-}
+}*/
 .small-img-row p{
     margin-left: 20px;
     color: #707070;
@@ -72,16 +85,18 @@ body{
     transform: translate(-50%,-50%);
     display: none;
 }
+
 video:focus{
     outline: none;
 }
+
 .close-btn{
     position: absolute;
     top: 10px;
     right: 10px;
     width: 30px;
     cursor: pointer;
-    
+
 }
 
 #status span.status {
@@ -106,6 +121,7 @@ video:focus{
      margin-right: auto;
      display: block
   }
+
   .btn {
   background-position-x: center;
   background-color: #4CAF50; /* Green */
@@ -118,6 +134,8 @@ video:focus{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    margin-left: 640px;
   }
-  
+
+  .butn{
+    text-align: center;
+  }
