@@ -1,0 +1,67 @@
+<p>course works!</p>
+<html>
+    <head>
+        <title> Assessment video</title>
+    </head>
+    <body>
+
+        <h1>Take a look at this videos</h1>
+         <div class="container">
+             <div class="row">
+                 <div class="col">
+                     <div class="small-img-row">
+                         <div class="small-img">
+                             <img src="assets/img/image2.jpg">
+                             <p id = 'video1' hidden></p>
+                             <img src="assets/img/play.png" class="play-btn" onclick="playVideo(document.getElementById('video1').innerHTML)">
+                             </div>
+                             <p>Video 1 - Description</p>
+                             <p>
+                                <span id="played">0</span> seconds out of
+                                <span id="duration1"></span> seconds.
+                            </p>
+
+                         </div>
+                     <div class="small-img-row">
+                         <div class="small-img">
+                             <img src="assets/img/image2.jpg">
+                             <p id = 'video2' hidden></p>
+                             <img src="assets/img/play.png" class="play-btn" onclick="playVideo(document.getElementById('video2').innerHTML)">
+                             </div>
+                             <p>Video 2 - Description</p>
+                             <p>
+                                <span id="played2">0</span> seconds out of
+                                <span id="duration2"></span> seconds.
+                            </p>
+                         </div>
+                     <div class="small-img-row">
+                         <div class="small-img">
+                             <img src="assets/img/image2.jpg">
+                             <img src="assets/img/play.png" class="play-btn" onclick="playVideo('assets/rain.mp4')">
+                             </div>
+                             <p>Video 3 - Description</p>
+                             <p>
+                                <span id="played3">0</span> seconds out of
+                                <span id="duration3"></span> seconds.
+                            </p>
+                         </div>
+                     </div>
+                 </div>
+        </div>
+        <div class="video-player" id="videoPlayer">
+          <video class='video' width="100%" controls id="video">
+              </video>
+              <img src="assets/img/close.png" class="close-btn" onclick="stopVideo()">
+            <div id="status" class="incomplete">
+                <span>Play status: </span>
+                <span class="status complete">COMPLETE</span>
+                <span class="status incomplete">INCOMPLETE</span>
+                <br/>
+                </div>
+                </div>
+<div class=".center">
+<button class= "btn" onclick="window.location.href='/page2'">Take Assessment</button>
+</div>
+        <script src="./video.js"></script>
+    </body>
+</html>

@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('userid',res['email'])
           localStorage.setItem('token',res['_id'])
           if (res['test']==true){
-            this._router.navigate(['/videoplayer'])
+            this._router.navigate(['/home'])
           }else{
             this._router.navigate(['/test'])
           }

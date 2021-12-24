@@ -9,10 +9,10 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AuthService } from './auth.service';
 import { TestComponent } from './test/test.component';
-import { VideoplayerComponent } from './videoplayer/videoplayer.component';
 import { AssesmentComponent } from './assesment/assesment.component';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { CourseComponent } from './course/course.component';
 
 
 @NgModule({
@@ -22,8 +22,8 @@ import { TokenInterceptorService } from './token-interceptor.service';
     LoginComponent,
     HomeComponent,
     TestComponent,
-    VideoplayerComponent,
     AssesmentComponent,
+    CourseComponent,
   ],
   imports: [
     BrowserModule,

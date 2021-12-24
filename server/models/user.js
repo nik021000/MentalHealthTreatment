@@ -7,7 +7,10 @@
      email: String,
      password: String,
      test:Boolean,
-     answers:Array
+     answers:String,
+     Depression:String,
+     Anxiety:String,
+     Stress:String
  })
 
  module.exports = mongoose.model('user',userSchema,'users')

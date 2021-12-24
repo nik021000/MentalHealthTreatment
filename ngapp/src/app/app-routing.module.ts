@@ -6,7 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { TestComponent } from './test/test.component';
 import { AssesmentComponent } from './assesment/assesment.component';
 import { AuthGuard } from './auth.guard';
-import { VideoplayerComponent } from './videoplayer/videoplayer.component';
+import { CourseComponent } from './course/course.component';
 
 const routes: Routes = [
   {
@@ -33,8 +33,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path:'videoplayer',
-    component:VideoplayerComponent,
+    path:'course',
+    component:CourseComponent,
     canActivate: [AuthGuard]
   }
 ];
